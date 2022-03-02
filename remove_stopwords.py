@@ -11,7 +11,7 @@ def extract(doc, stopwords):
     """Remove stopwords and punctuation."""
     doc = [t for t in doc if t.is_alpha or t.pos_ is 'NUM']
     # Two passes on the stopwords: first, just the text, then check for any plurals with the lemmas
-    doc = [t for t in doc if (t.is_stop == False) and t.text not in stopwords]
+    doc = [t for t in doc if (t.is_stop == False) and (t.text not in stopwords)]
     doc = [t for t in doc if t.lemma_ not in stopwords]
     return doc
 
